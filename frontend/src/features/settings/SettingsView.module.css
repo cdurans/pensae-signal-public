@@ -1,0 +1,223 @@
+.page {
+  width: min(72rem, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 3rem 0 5rem;
+}
+
+.header {
+  max-width: 54rem;
+}
+
+.header h1 {
+  margin: 0.35rem 0 0.75rem;
+  font-size: clamp(2rem, 5vw, 3.35rem);
+  line-height: 1.05;
+}
+
+.eyebrow,
+.fieldHelp,
+.liveMessage {
+  color: var(--color-text-subtle);
+}
+
+.eyebrow {
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.health,
+.group,
+.errorSummary {
+  padding: 1.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-large);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.health {
+  margin: 2rem 0 1rem;
+}
+
+.sectionHeading {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.sectionHeading h2,
+.healthSummary {
+  margin-top: 0;
+}
+
+.healthSummary {
+  font-weight: 800;
+}
+
+.healthList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 0.75rem;
+  padding: 0;
+  list-style: none;
+}
+
+.healthList li {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.8rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-small);
+  background: var(--color-surface-soft);
+}
+
+.healthList span {
+  overflow-wrap: anywhere;
+}
+
+.blockers,
+.errorSummary {
+  border-left: 0.35rem solid var(--color-incompatible);
+}
+
+.blockers {
+  padding: 0.8rem 1rem;
+  background: var(--color-surface-soft);
+}
+
+.form {
+  display: grid;
+  gap: 1rem;
+}
+
+.errorSummary h2,
+.errorSummary p {
+  margin: 0.25rem 0;
+}
+
+.group {
+  min-width: 0;
+}
+
+.group legend {
+  padding: 0 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.fieldGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.field {
+  display: grid;
+  align-content: start;
+  gap: 0.45rem;
+}
+
+.field label {
+  font-weight: 800;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-small);
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.field [aria-invalid="true"] {
+  border: 0.15rem solid var(--color-incompatible);
+}
+
+.fieldHelp {
+  display: grid;
+  gap: 0.2rem;
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.fieldError {
+  margin: 0;
+  color: var(--color-incompatible);
+  font-weight: 800;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.actions button {
+  min-height: 2.75rem;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-small);
+  background: var(--color-accent);
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.actions button:hover:not(:disabled) {
+  background: var(--color-accent-hover);
+}
+
+.actions .secondaryButton {
+  background: var(--color-surface);
+  color: var(--color-accent);
+}
+
+.actions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.liveMessage {
+  min-height: 1.4rem;
+  margin: 0;
+}
+
+.dialogBackdrop {
+  position: fixed;
+  z-index: 10;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgb(15 23 20 / 70%);
+}
+
+.dialog {
+  width: min(32rem, 100%);
+  padding: 1.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-large);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.dialog h2 {
+  margin-top: 0;
+}
+
+@media (max-width: 48rem) {
+  .fieldGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .sectionHeading {
+    display: block;
+  }
+}

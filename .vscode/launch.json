@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Pensae Signal: full launcher",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/scripts/linux/launcher.py",
+      "args": ["start"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": false,
+      "subProcess": false
+    }
+  ]
+}

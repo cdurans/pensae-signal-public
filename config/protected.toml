@@ -1,0 +1,99 @@
+[policy]
+canonical_host = "127.0.0.1"
+llama_build = "b10076"
+chat_model_id = "Qwen3.6-35B-A3B-UD-IQ4_XS"
+embedding_model_id = "Qwen3-Embedding-0.6B"
+embedding_dimension = 1024
+compose_readiness_seconds = 120
+compose_command_timeout_seconds = 300
+migration_timeout_seconds = 60
+launcher_readiness_seconds = 120
+launcher_stop_grace_seconds = 15
+
+[research]
+workflow_version = "phase7.sequential-five.v1"
+schema_version = "phase2.opportunity.v1"
+fingerprint_version = "sha256-canonical-json-v1"
+planner_prompt_version = "research-planner.retrieval-v2"
+problem_analyst_prompt_version = "problem-analyst.v1"
+product_strategist_prompt_version = "product-strategist.v1"
+opportunity_analyst_prompt_version = "opportunity-analyst.v1"
+model_parameter_version = "llama-chat-nonthinking-grammar-v2"
+similarity_threshold_version = "phase5.labeled-offline-live-v1"
+related_similarity_threshold = 0.60
+possible_rediscovery_similarity_threshold = 0.82
+repair_max = 1
+temperature = 0.7
+top_p = 0.8
+top_k = 20
+min_p = 0.0
+presence_penalty = 1.5
+repetition_penalty = 1.0
+prompt_input_max_tokens = 8192
+context_safety_tokens = 2048
+planner_output_max_tokens = 2048
+problem_analyst_output_max_tokens = 4096
+product_strategist_output_max_tokens = 4096
+opportunity_analyst_output_max_tokens = 6144
+commercial_weight = 35
+evidence_weight = 30
+feasibility_weight = 25
+differentiation_weight = 10
+
+[research.bounds]
+discovery_queries = 8
+results_per_query = 10
+unique_urls = 60
+first_pass_pages = 24
+run_queries = 40
+run_pages = 96
+signals = 30
+patterns = 10
+segments_per_pattern = 3
+preliminary_survivors = 12
+concepts = 8
+focused_queries_per_concept = 3
+focused_pages_per_concept = 6
+opportunities = 5
+search_retries = 1
+public_page_retries = 0
+source_bytes = 3145728
+run_bytes = 201326592
+run_bytes_ceiling = 402653184
+model_calls = 160
+model_calls_ceiling = 256
+repairs = 8
+repairs_ceiling = 16
+total_run_tokens = 1500000
+total_run_tokens_ceiling = 1500000
+search_timeout_seconds = 30
+model_timeout_seconds = 120
+embedding_timeout_seconds = 60
+redis_stream_events = 1000
+redis_active_ttl_seconds = 86400
+redis_terminal_ttl_seconds = 3600
+redis_cancellation_ttl_seconds = 86400
+
+[chat]
+role = "chat"
+port = 8085
+fixed_args = [
+  "--ctx-size", "32768",
+  "--n-gpu-layers", "999",
+  "--cache-type-k", "q8_0",
+  "--cache-type-v", "q8_0",
+  "--flash-attn", "on",
+  "--parallel", "1",
+  "--jinja",
+  "--no-context-shift"
+]
+
+[embedding]
+role = "embedding"
+port = 8086
+fixed_args = [
+  "--ctx-size", "8192",
+  "--n-gpu-layers", "0",
+  "--embedding",
+  "--pooling", "last"
+]

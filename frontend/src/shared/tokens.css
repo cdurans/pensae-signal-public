@@ -1,0 +1,62 @@
+:root {
+  color-scheme: light;
+  font-family:
+    ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+
+  --color-canvas: #f4f5f2;
+  --color-surface: #ffffff;
+  --color-surface-soft: #edf0eb;
+  --color-text: #1f2925;
+  --color-text-subtle: #53625b;
+  --color-border: #cbd3cd;
+  --color-accent: #135f4a;
+  --color-accent-hover: #0d4a39;
+  --color-ready: #176b4b;
+  --color-starting: #765b00;
+  --color-unavailable: #9a3412;
+  --color-incompatible: #9b1c31;
+  --color-unknown: #7c2d12;
+  --color-focus: #2457b2;
+  --shadow-card: 0 12px 30px rgb(24 41 33 / 8%);
+  --radius-small: 0.5rem;
+  --radius-medium: 0.875rem;
+  --radius-large: 1.25rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 20rem;
+  min-height: 100vh;
+  background: var(--color-canvas);
+  color: var(--color-text);
+}
+
+:focus-visible {
+  outline: 0.2rem solid var(--color-focus);
+  outline-offset: 0.15rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}

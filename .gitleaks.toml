@@ -1,0 +1,14 @@
+title = "Pensae Signal publication gate"
+
+[extend]
+useDefault = true
+
+# Exact reviewed non-secret values; never allow entire paths or generic hashes.
+# The SHA-256 was recomputed from the Phase 7 OpenAPI artifact in both lineages.
+[allowlist]
+description = "Verified Phase 7 OpenAPI digest and internal run counter identifier"
+regexTarget = "secret"
+regexes = [
+  '^64147d986b1e038795b2cc222e3543f378f102de0c6e858f2159d0d2c3222164$',
+  '^p7_achieved_count$',
+]

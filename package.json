@@ -1,0 +1,15 @@
+{
+  "name": "pensae-workspace",
+  "private": true,
+  "packageManager": "pnpm@11.15.1",
+  "engines": {
+    "node": ">=24 <25",
+    "pnpm": ">=11 <12"
+  },
+  "scripts": {
+    "build": "pnpm --dir frontend build",
+    "check": "pnpm --dir frontend check",
+    "test": "pnpm --dir frontend test --run",
+    "generate:api": "pnpm --dir frontend generate:api"
+  }
+}

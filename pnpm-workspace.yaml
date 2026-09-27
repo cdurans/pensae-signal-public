@@ -1,0 +1,10 @@
+packages:
+  - frontend
+
+onlyBuiltDependencies:
+  - esbuild
+
+storeDir: .pnpm-store
+confirmModulesPurge: false
+allowBuilds:
+  esbuild: true

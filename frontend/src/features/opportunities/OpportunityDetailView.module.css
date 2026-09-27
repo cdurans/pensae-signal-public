@@ -1,0 +1,249 @@
+.page {
+  width: min(72rem, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 3rem 0 5rem;
+}
+
+.header {
+  margin-bottom: 1.5rem;
+}
+
+.header h1 {
+  max-width: 48rem;
+  margin: 0.35rem 0 0.65rem;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  line-height: 1.05;
+}
+
+.eyebrow,
+.meta,
+.immutable {
+  color: var(--color-text-subtle);
+}
+
+.eyebrow {
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.summary {
+  max-width: 48rem;
+  font-size: 1.12rem;
+  line-height: 1.6;
+}
+
+.verdict {
+  display: inline-flex;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid var(--color-ready);
+  border-radius: 999px;
+  color: var(--color-ready);
+  font-weight: 800;
+  text-transform: capitalize;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr;
+  gap: 1rem;
+}
+
+.analysisGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 1.5rem;
+}
+
+.metadataGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.65fr) minmax(0, 1.35fr);
+  gap: 1.5rem;
+}
+
+.metadataGrid form,
+.metadataGrid form label {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.metadataGrid form label {
+  font-weight: 800;
+}
+
+.metadataGrid textarea {
+  width: 100%;
+  padding: 0.65rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-small);
+  background: var(--color-surface);
+  color: var(--color-text);
+  resize: vertical;
+}
+
+.metadataGrid button {
+  width: fit-content;
+  min-height: 2.75rem;
+  padding: 0.55rem 0.85rem;
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-small);
+  background: var(--color-accent);
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.metadataGrid button:hover:not(:disabled) {
+  background: var(--color-accent-hover);
+}
+
+.metadataGrid button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.help,
+.liveMessage {
+  color: var(--color-text-subtle);
+  font-size: 0.88rem;
+}
+
+.liveMessage {
+  min-height: 1.35rem;
+  margin-bottom: 0;
+}
+
+.signalList,
+.relationList,
+.versionList {
+  display: grid;
+  gap: 0.75rem;
+  padding-left: 1.25rem;
+}
+
+.signalList li,
+.relationList li,
+.versionList li {
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.signalList p {
+  margin: 0.3rem 0;
+}
+
+.relationList span,
+.versionList span {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--color-text-subtle);
+}
+
+.card {
+  padding: 1.35rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-large);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+.card p,
+.card blockquote {
+  line-height: 1.55;
+}
+
+.scoreGrid,
+.provenance {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.scoreGrid div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.provenance div {
+  display: grid;
+  grid-template-columns: minmax(8rem, 2fr) minmax(0, 3fr);
+  gap: 1rem;
+  align-items: start;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.scoreGrid dt,
+.provenance dt {
+  min-width: 0;
+  text-transform: capitalize;
+}
+
+.scoreGrid dd,
+.provenance dd {
+  min-width: 0;
+  margin: 0;
+  overflow-wrap: anywhere;
+  font-weight: 800;
+}
+
+.evidenceList {
+  display: grid;
+  gap: 1rem;
+  padding-left: 1.4rem;
+}
+
+.evidenceList li {
+  padding: 0.6rem 0 1rem 0.4rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.evidenceList blockquote {
+  margin-left: 0;
+  padding-left: 1rem;
+  border-left: 0.25rem solid var(--color-accent);
+}
+
+.claim {
+  font-weight: 800;
+}
+
+.meta {
+  margin-bottom: 0;
+  font-size: 0.85rem;
+  text-transform: capitalize;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 800;
+}
+
+@media (max-width: 48rem) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .analysisGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .metadataGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 34rem) {
+  .provenance div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.35rem;
+  }
+}

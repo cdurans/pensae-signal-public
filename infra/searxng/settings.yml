@@ -1,0 +1,35 @@
+use_default_settings: true
+
+general:
+  instance_name: Pensae Signal local search
+  debug: false
+
+search:
+  safe_search: 1
+  formats:
+    - html
+    - json
+
+server:
+  bind_address: "127.0.0.1"
+  port: 8888
+  limiter: false
+  image_proxy: false
+  # The required SEARXNG_SECRET environment value is supplied by Compose from .env.
+  secret_key: ""
+
+outgoing:
+  request_timeout: 10.0
+  max_request_timeout: 15.0
+  pool_connections: 4
+  pool_maxsize: 4
+
+engines:
+  - name: brave
+    disabled: false
+  - name: duckduckgo
+    disabled: false
+  - name: yandex
+    disabled: false
+  - name: bing
+    disabled: true

@@ -1,0 +1,150 @@
+{
+  "fixture_kind": "public product-policy regression expectations",
+  "protected_configuration": {
+    "path": "config/protected.toml",
+    "alembic_head": "20260722_0005",
+    "prompt_input_max_tokens": 8192,
+    "context_safety_tokens": 2048,
+    "workflow_version": "phase7.sequential-five.v1",
+    "planner_prompt_version": "research-planner.retrieval-v2",
+    "schema_version": "phase2.opportunity.v1",
+    "fingerprint_version": "sha256-canonical-json-v1",
+    "similarity_threshold_version": "phase5.labeled-offline-live-v1",
+    "model_parameter_version": "llama-chat-nonthinking-grammar-v2",
+    "llama_build": "b10076",
+    "chat_model_id": "Qwen3.6-35B-A3B-UD-IQ4_XS",
+    "embedding_model_id": "Qwen3-Embedding-0.6B",
+    "embedding_dimension": 1024,
+    "sha256": "f61e407a2aa337faf4194dd5560cd183353e5fc697f860790510feb998bfe63c"
+  },
+  "bounds": {
+    "discovery_queries": 8,
+    "results_per_query": 10,
+    "unique_urls": 60,
+    "first_pass_pages": 24,
+    "run_queries": 40,
+    "run_pages": 96,
+    "signals": 30,
+    "patterns": 10,
+    "segments_per_pattern": 3,
+    "preliminary_survivors": 12,
+    "concepts": 8,
+    "focused_queries_per_concept": 3,
+    "focused_pages_per_concept": 6,
+    "opportunities": 5,
+    "search_retries": 1,
+    "public_page_retries": 0,
+    "source_bytes": 3145728,
+    "run_bytes": 201326592,
+    "run_bytes_ceiling": 402653184,
+    "model_calls": 160,
+    "model_calls_ceiling": 256,
+    "repairs": 8,
+    "repairs_ceiling": 16,
+    "total_run_tokens": 1500000,
+    "total_run_tokens_ceiling": 1500000,
+    "search_timeout_seconds": 30,
+    "model_timeout_seconds": 120,
+    "embedding_timeout_seconds": 60,
+    "redis_stream_events": 1000,
+    "redis_active_ttl_seconds": 86400,
+    "redis_terminal_ttl_seconds": 3600,
+    "redis_cancellation_ttl_seconds": 86400
+  },
+  "counting_contract": {
+    "target": 5,
+    "concept_cap": 8,
+    "counts": [
+      "new",
+      "definitely_related"
+    ],
+    "does_not_count": [
+      "automatic_exact_rediscovery",
+      "updated_version",
+      "unresolved_possible_rediscovery",
+      "invalid_candidate",
+      "incomplete_candidate"
+    ],
+    "verdict_affects_count": false,
+    "filler_permitted": false
+  },
+  "finalization_budget": {
+    "default_capacity": {
+      "queries": 40,
+      "pages": 96,
+      "bytes": 201326592,
+      "model_calls": 160,
+      "repairs": 8,
+      "total_tokens": 1500000
+    },
+    "ceiling_capacity": {
+      "queries": 40,
+      "pages": 96,
+      "bytes": 402653184,
+      "model_calls": 256,
+      "repairs": 16,
+      "total_tokens": 1500000
+    },
+    "per_target_slot": {
+      "queries": 3,
+      "pages": 6,
+      "bytes": 18874368,
+      "model_calls": 5,
+      "repairs": 1,
+      "total_tokens": 59392
+    },
+    "normal_configured_upstream": {
+      "queries": 8,
+      "pages": 24,
+      "bytes": 75497472,
+      "model_calls": 64,
+      "repairs": 0,
+      "total_tokens": 780288
+    },
+    "upstream_plus_three_non_slot_repairs": {
+      "queries": 8,
+      "pages": 24,
+      "bytes": 75497472,
+      "model_calls": 67,
+      "repairs": 3,
+      "total_tokens": 823296
+    },
+    "five_target_admission_envelope": {
+      "queries": 23,
+      "pages": 54,
+      "bytes": 169869312,
+      "model_calls": 92,
+      "repairs": 8,
+      "total_tokens": 1120256
+    },
+    "default_remaining_after_five_target_admission": {
+      "queries": 17,
+      "pages": 42,
+      "bytes": 31457280,
+      "model_calls": 68,
+      "repairs": 0,
+      "total_tokens": 379744
+    },
+    "full_eight_candidate_pool_with_default_repairs": {
+      "queries": 32,
+      "pages": 72,
+      "bytes": 226492416,
+      "model_calls": 104,
+      "repairs": 8,
+      "total_tokens": 1255424
+    },
+    "full_eight_candidate_pool_with_repair_ceiling": {
+      "queries": 32,
+      "pages": 72,
+      "bytes": 226492416,
+      "model_calls": 112,
+      "repairs": 16,
+      "total_tokens": 1370112
+    },
+    "five_slot_default_feasible": true,
+    "eight_slot_default_token_feasible": true,
+    "eight_slot_default_byte_feasible": false,
+    "eight_slot_ceiling_feasible": true,
+    "limitation": "The eight-candidate 226492416-byte maximum is above the 201326592-byte default and within the 402653184-byte ceiling. Five worst-case target slots fit the default budget."
+  }
+}

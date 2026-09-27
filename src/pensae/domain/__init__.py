@@ -1,0 +1,1 @@
+"""Deterministic product-domain types."""
